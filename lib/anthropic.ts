@@ -31,5 +31,8 @@ export function getAnthropic(): Anthropic {
 /** Claude model to use. Override with the ANTHROPIC_MODEL env variable. */
 export const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || "claude-sonnet-5";
 
-/** Max tokens for a single reply. */
-export const MAX_TOKENS = 700;
+/**
+ * Max tokens for a single reply. Kept generous so answers finish naturally
+ * instead of being cut off mid-sentence. Override with ANTHROPIC_MAX_TOKENS.
+ */
+export const MAX_TOKENS = Number(process.env.ANTHROPIC_MAX_TOKENS) || 2048;

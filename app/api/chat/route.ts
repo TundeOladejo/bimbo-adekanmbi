@@ -108,7 +108,16 @@ export async function POST(req: NextRequest) {
             sentAnyText = true;
             controller.enqueue(encoder.encode(text));
           });
-          await stream.finalMessage();
+          const final = await stream.finalMessage();
+          // If the reply was truncated because it hit the token ceiling, let
+          // the visitor know rather than ending abruptly mid-sentence.
+          if (final.stop_reason === "max_tokens") {
+            controller.enqueue(
+              encoder.encode(
+                "\n\n…there's more I could say on this — ask me to continue and I'll pick up from here."
+              )
+            );
+          }
         } catch (err) {
           // Log the real error server-side so it appears in the terminal,
           // but only show the visitor a friendly, generic message.
