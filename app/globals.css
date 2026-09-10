@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Faint navy grid + soft radial glow so flat sections don't feel empty. */
+    background-color: #f6f8fc;
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, 0.08), transparent 60%),
+      radial-gradient(900px 500px at -10% 10%, rgba(19, 35, 79, 0.05), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* Tighter, more editorial display headings */
+  .font-display {
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+  }
+}
+
+@layer components {
+  /* Section eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-sky-dark;
+  }
+
+  /* Thin gold rule used under headings */
+  .gold-rule {
+    @apply h-[3px] w-12 rounded-full bg-gold;
+  }
+
+  /* Gold highlight behind a word in a heading */
+  .mark-gold {
+    @apply relative inline-block;
+  }
+  .mark-gold::after {
+    content: "";
+    @apply absolute inset-x-[-2px] bottom-1 -z-10 h-3 rounded-sm bg-gold/70;
+  }
+}
+
+/* Very subtle grain so large flat areas read as designed, not empty. */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Slim, refined scrollbar for the chat panel */
+.thin-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: rgba(19, 35, 79, 0.15);
+  border-radius: 9999px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
