@@ -9,9 +9,10 @@ function initials(name: string) {
 export default function Footer() {
   const c = candidate.contact;
   const socials = [
-    { label: "Twitter", href: c.twitter },
     { label: "Facebook", href: c.facebook },
     { label: "Instagram", href: c.instagram },
+    { label: "LinkedIn", href: c.linkedin },
+    { label: "Twitter / X", href: c.twitter },
   ].filter((s) => s.href);
 
   return (
@@ -32,9 +33,10 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            {candidate.party && (
-              <p className="mt-4 max-w-sm text-sm text-white/60">{candidate.party}</p>
-            )}
+            <p className="mt-4 max-w-sm text-sm text-white/60">
+              Building on what works, fixing what does not — a data-driven government for all 33
+              local governments of Oyo State.
+            </p>
             <div className="gold-rule mt-5" />
           </div>
 
@@ -44,14 +46,21 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link href="/" className="transition-colors hover:text-white">Home</Link></li>
               <li><Link href="/about" className="transition-colors hover:text-white">About</Link></li>
-              <li><Link href="/chat" className="transition-colors hover:text-white">Ask the AI</Link></li>
+              <li><Link href="/chat" className="transition-colors hover:text-white">Ask the assistant</Link></li>
             </ul>
           </div>
 
           {/* contact */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">Contact</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">Connect</p>
             <ul className="mt-4 space-y-2 text-sm">
+              {c.website && (
+                <li>
+                  <a href={c.website} target="_blank" rel="noreferrer" className="transition-colors hover:text-white">
+                    bimboadekanbi.com
+                  </a>
+                </li>
+              )}
               {c.email && <li>{c.email}</li>}
               {c.phone && <li>{c.phone}</li>}
               {c.address && <li className="text-white/50">{c.address}</li>}
@@ -76,7 +85,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/40">
-        © {new Date().getFullYear()} {candidate.name} Campaign.
+        <p>© {new Date().getFullYear()} {candidate.name} for {candidate.office}. All rights reserved.</p>
+        <p className="mt-1 text-white/30">Paid for by the {candidate.name} Campaign Organisation.</p>
       </div>
     </footer>
   );

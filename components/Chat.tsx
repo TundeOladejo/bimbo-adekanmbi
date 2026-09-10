@@ -7,10 +7,10 @@ import { candidate } from "@/content/candidate";
 type Message = { role: "user" | "assistant"; content: string };
 
 const SUGGESTIONS = [
-  "Who is the candidate?",
-  "What is his plan for education?",
-  "How will he create jobs?",
-  "Báwo ni yóò ṣe mú ààbò dàgbà?", // Yoruba: How will he improve security?
+  "What did you do as finance commissioner?",
+  "How will you support farmers and agriculture?",
+  "Why are you the APM candidate if you joined the PDP?",
+  "Kí ni ètò rẹ fún iṣẹ́ àwọn ọ̀dọ́?", // Yoruba: What is your plan for youth jobs?
 ];
 
 function initials(name: string) {
@@ -18,15 +18,25 @@ function initials(name: string) {
   return (parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? "");
 }
 
-export default function Chat() {
+export default function Chat({ initialQuestion }: { initialQuestion?: string }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const autoSent = useRef(false);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
+
+  // If the visitor arrived from a homepage question (/chat?q=...), ask it once.
+  useEffect(() => {
+    if (initialQuestion && !autoSent.current) {
+      autoSent.current = true;
+      send(initialQuestion);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialQuestion]);
 
   async function send(text: string) {
     const question = text.trim();
@@ -97,10 +107,10 @@ export default function Chat() {
           </span>
         )}
         <div className="leading-tight">
-          <p className="font-semibold">Ask about {candidate.name}</p>
+          <p className="font-semibold">{candidate.name}</p>
           <p className="flex items-center gap-1.5 text-xs text-sky-light">
             <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-            English or Yoruba · Béèrè ní Gẹ̀ẹ́sì tàbí Yorùbá
+            Here to talk · English or Yoruba
           </p>
         </div>
       </div>
@@ -115,7 +125,8 @@ export default function Chat() {
               </svg>
             </span>
             <p className="mt-4 text-ink-700">
-              Hello! I can answer questions about {candidate.name}. Try one of these:
+              Ẹ káàbọ̀ — thank you for stopping by. It&apos;s {candidate.shortName}. Ask me anything
+              about my record, my plans for Oyo State, or the things you&apos;re concerned about.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
               {SUGGESTIONS.map((s) => (

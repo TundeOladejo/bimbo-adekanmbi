@@ -8,23 +8,52 @@
   }
 
   body {
-    /* Faint navy grid + soft radial glow so flat sections don't feel empty. */
+    /* A quiet, warm paper tone with one soft glow near the top — restrained,
+       so the page reads as designed rather than decorated. */
     background-color: #f6f8fc;
     background-image:
-      radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, 0.08), transparent 60%),
-      radial-gradient(900px 500px at -10% 10%, rgba(19, 35, 79, 0.05), transparent 55%);
+      radial-gradient(1000px 520px at 82% -12%, rgba(56, 189, 248, 0.06), transparent 62%);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
     font-weight: 600;
     letter-spacing: -0.02em;
+    text-wrap: balance;
   }
 
-  /* Tighter, more editorial display headings */
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Editorial serif display headings (Fraunces). Serifs read best with near-
+     neutral tracking and an optical size that leans into the "soft" axis. */
   .font-display {
-    letter-spacing: -0.035em;
-    line-height: 1.02;
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+
+  /* Consistent keyboard focus ring across interactive elements. */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.45), 0 0 0 6px rgba(19, 35, 79, 0.12);
+    border-radius: 0.5rem;
+  }
+
+  /* Respect users who prefer less motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -39,14 +68,27 @@
     @apply h-[3px] w-12 rounded-full bg-gold;
   }
 
-  /* Gold highlight behind a word in a heading */
+  /* Gold highlight behind a word in a heading, drawn like a hand swipe. */
   .mark-gold {
     @apply relative inline-block;
   }
   .mark-gold::after {
     content: "";
-    @apply absolute inset-x-[-2px] bottom-1 -z-10 h-3 rounded-sm bg-gold/70;
+    @apply absolute inset-x-[-4px] bottom-1 -z-10 h-[0.35em] -rotate-1 rounded-sm bg-gold/70;
   }
+
+  /* Reusable page container to keep gutters consistent. */
+  .container-page {
+    @apply mx-auto max-w-6xl px-5;
+  }
+
+  /* Staggered entrance delays for lists/grids. */
+  .delay-1 { animation-delay: 0.06s; }
+  .delay-2 { animation-delay: 0.12s; }
+  .delay-3 { animation-delay: 0.18s; }
+  .delay-4 { animation-delay: 0.24s; }
+  .delay-5 { animation-delay: 0.30s; }
+  .delay-6 { animation-delay: 0.36s; }
 }
 
 /* Very subtle grain so large flat areas read as designed, not empty. */

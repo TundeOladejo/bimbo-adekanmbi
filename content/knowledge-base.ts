@@ -15,15 +15,27 @@
  *     the text. Add tags to help the AI find the topic.
  *
  *  SOURCING NOTE (important for a political candidate):
- *   - The biography, career, family, and awards below are drawn from public
- *     sources, primarily his Wikipedia profile
- *     (https://en.wikipedia.org/wiki/Abimbola_Adekanmbi) and Nigerian news
- *     coverage (Channels TV, The Guardian, Tribune, Independent, Vanguard),
- *     accurate as of mid-2026.
- *   - Sections marked "CAMPAIGN TO CONFIRM" contain only what public sources
- *     support at a high level. Do NOT invent detailed promises, figures, or
- *     dates. Replace those sections with the campaign's official manifesto
- *     wording before publishing.
+ *   - This knowledge base is compiled from the independently researched
+ *     "Candidate Knowledge Base" reference document (Version 1.0, research
+ *     cut-off 10 September 2026), which draws only on publicly available
+ *     sources: INEC and Oyo State Government publications, the candidate's
+ *     Wikipedia profile (https://en.wikipedia.org/wiki/Abimbola_Adekanmbi),
+ *     his LinkedIn profile, and Nigerian news coverage (Nigerian Tribune,
+ *     Premium Times, Channels TV, The Guardian, Business Hallmark, Vanguard,
+ *     The Nation, InsideOyo and others).
+ *   - The research document grades every claim: VERIFIED (multiple independent
+ *     or official sources), SINGLE SOURCE, SELF-REPORTED (the candidate's own
+ *     account) and UNVERIFIED. This file reflects that grading in how it words
+ *     things: verified facts are stated plainly; the candidate's own accounts
+ *     are attributed to him ("he has said", "according to his own account")
+ *     rather than presented as established fact.
+ *   - The candidate had NOT published a formal manifesto as at the research
+ *     cut-off. Policy topics therefore describe the DIRECTIONAL positions he
+ *     has stated publicly, and deliberately avoid specific figures, costings,
+ *     and timelines that are not yet public. Do NOT invent them.
+ *   - Where the document says something should not be repeated publicly as
+ *     fact (rumours, partisan allegations, disputed motives), this file either
+ *     omits it or frames it as an open question, never as a settled claim.
  * ============================================================================
  */
 
@@ -39,121 +51,342 @@ export type KnowledgeEntry = {
 export const knowledgeBase: KnowledgeEntry[] = [
   {
     title: "Biography and Background",
-    tags: ["bio", "biography", "background", "who", "born", "age", "family", "origin", "history", "ibadan"],
-    content: `Abimbola Olalere Adekanmbi, popularly known as Bimbo Adekanmbi, is a Nigerian public
-policy expert, chartered accountant, and politician. He was born on 5 April 1973 in Ibadan, Oyo
-State, to Reverend Olalere Adekanmbi and Madam Ashiyanbi Adekanmbi of Ile Ojo Seriki Compound,
-Beyerunka, Ibadan. He is the second child of the family. He is the Allied Peoples Movement (APM)
-consensus candidate for the 2027 Oyo State governorship election.`,
+    tags: ["bio", "biography", "background", "who", "born", "age", "family", "origin", "history", "ibadan", "roots"],
+    content: `Hon. Abimbola Olalere Adekanmbi, popularly known as Bimbo Adekanmbi (also spelled
+Adekanbi), is a Nigerian chartered accountant, public finance specialist and politician. He is the
+Allied Peoples Movement (APM) candidate for Governor of Oyo State in the election scheduled for
+6 February 2027. He was born in Ibadan, Oyo State, to Reverend Olalere Adekanmbi (a clergyman and a
+founding member of the Omo Aj'orosun Club, Ibadan) and Madam Ashiyanbi Adekanmbi (a well-known trader
+in Bodija Market), of Ile Ojo Seriki Compound, Beyerunka, Ibadan. He is the second child of the
+family. He was born and raised in Ibadan — growing up across the Apata, Iwo Road and Bodija areas —
+and describes himself as a son of Ibadan. His public date of birth is 5 April 1973; the campaign is
+best placed to confirm the exact date, and his specific Local Government Area of origin is not stated
+in public sources and should be confirmed with the campaign.`,
+  },
+  {
+    title: "The Name — Adekanbi vs Adekanmbi",
+    tags: ["name", "spelling", "adekanbi", "adekanmbi", "surname"],
+    content: `Two spellings of the surname appear in public: "Adekanmbi" and "Adekanbi". They refer to
+the same person. National newspapers and his Wikipedia entry generally use "Adekanmbi", while the
+campaign's own website domain (bimboadekanbi.com) uses "Adekanbi". If a visitor is confused by the two
+spellings, reassure them that both refer to the same candidate, Hon. Bimbo Adekanbi.`,
   },
   {
     title: "Education",
-    tags: ["education", "school", "university", "degree", "study", "qualification", "accountant", "mba"],
+    tags: ["education", "school", "university", "degree", "study", "qualification", "accountant", "mba", "fcca"],
     content: `Adekanmbi began his early education at Orita Mefa Baptist Primary School, Ibadan, and
-attended Federal Government College, Okigwe (in present-day Imo State) for secondary school. In 1991
-he gained admission to Obafemi Awolowo University, Ile-Ife, where he graduated with a bachelor's
-degree in Accounting in 1998. He later earned a Bachelor's degree in Applied Accounting from Oxford
-Brookes University in the United Kingdom, and a Master of Business Administration (MBA) in Strategy
-and Finance from Liverpool John Moores University. He has also completed executive and professional
-programmes, including SAP Financial Accounting training in Johannesburg (2002) and Leading and
-Managing People at the Wharton School, University of Pennsylvania (2012).`,
+attended Federal Government College, Okigwe (in what was then Imo State) for secondary school. He was
+admitted to Obafemi Awolowo University, Ile-Ife, in 1991 and graduated with a bachelor's degree in
+Accounting in 1998. He later earned a Bachelor's degree in Applied Accounting from Oxford Brookes
+University in the United Kingdom, and a Master of Business Administration (MBA) in Strategy and Finance
+from Liverpool John Moores University. He is a Fellow of the Association of Chartered Certified
+Accountants (FCCA). He has also completed professional and executive programmes, including SAP
+Financial Accounting and Controlling (FICO) training at the SAP Academy in Johannesburg (2002), a
+programme at Aston University (2008), and Leading and Managing People at the Wharton School,
+University of Pennsylvania (2012). His education is closely matched to the office he seeks: it is built
+around accounting and finance, which is directly relevant to a state's revenue, debt and budget
+challenges.`,
   },
   {
     title: "Professional and Business Career",
-    tags: ["career", "work", "job", "consultant", "finance", "banking", "accountant", "experience", "professional"],
-    content: `Adekanmbi completed the National Youth Service Corps (NYSC) in 1999 and worked in
-Nigeria's banking sector between 1999 and 2001. From 2002 to 2011 he worked in the United Kingdom as
-a finance and management consultant, contributing to projects for organisations including
-GlaxoSmithKline, AstraZeneca, IBM, Accenture, TNT, Caterpillar Logistics, Verizon Business, the
-Kingfisher Group (B&Q), Birmingham City Council, the Department for Transport, and Kent Police. He is
-a Fellow of the Association of Chartered Certified Accountants (FCCA). In 2020 he was appointed a
-pioneer member of the Digital Economy Policy Commission of the Nigerian Economic Summit Group (NESG).`,
+    tags: ["career", "work", "job", "consultant", "finance", "banking", "accountant", "experience", "professional", "uk", "consulting"],
+    content: `Adekanmbi completed the National Youth Service Corps (NYSC) in 1999, serving as an Accounts
+Officer in Maiduguri, Borno State, and worked in Nigeria's banking sector between 1999 and 2001. From
+about 2002 to 2011 he worked in the United Kingdom as a finance and management consultant. According
+to his professional profile, he contributed to finance-transformation and systems projects for
+organisations including Accenture, Verizon Business, GlaxoSmithKline, AstraZeneca, IBM, TNT,
+Caterpillar Logistics, the Kingfisher Group (B&Q), CP Ships, Birmingham City Council, the UK
+Department for Transport, and Kent Police. This UK consulting record is largely based on his own
+professional account, so it is best described as his reported experience rather than as independently
+audited fact. Since 2019 he has been Chief Executive Officer of iNCUBhUB and Brickonstruct. In 2020 he
+was appointed a pioneer member of the Digital Economy Policy Commission of the Nigerian Economic
+Summit Group (NESG).`,
   },
   {
     title: "Public Service in Oyo State",
-    tags: ["public service", "commissioner", "finance", "ajimobi", "government", "record", "track record", "revenue"],
+    tags: ["public service", "commissioner", "finance", "ajimobi", "government", "record", "track record", "revenue", "budget"],
     content: `Adekanmbi joined the Oyo State Government in 2011 as Deputy Chief of Staff to the Governor
 during the administration of the late Governor Abiola Ajimobi. He later served as Acting Chairman of
 the Oyo State Board of Internal Revenue, and was appointed Commissioner for Finance, Budget and
-Planning in 2016, a role he held until 2019. In that position he oversaw the state's budgeting, fiscal
-management, and financial administration.`,
+Planning, a role he held until the administration left office in 2019. (Public sources differ on
+whether the commissioner appointment began in 2015 or 2016; both agree it ran to 2019 and that he
+served roughly nine years in Oyo State government overall.) In that role he was responsible for the
+state's budgeting, fiscal management and financial administration during a difficult national revenue
+period that included the 2016 recession and reduced federal allocations. He has said his achievements
+in office included automating the state's salary payment process; these are his own accounts of his
+tenure.`,
   },
   {
-    title: "2027 Governorship Candidacy",
-    tags: ["2027", "election", "candidate", "apm", "governor", "makinde", "running mate", "governorship"],
+    title: "Ibadan Airport Upgrade Committee",
+    tags: ["airport", "aviation", "infrastructure", "committee", "chairman", "ibadan", "makinde", "project"],
+    content: `In July 2024, Oyo State Governor Seyi Makinde appointed Adekanmbi as chairman of the
+eleven-member committee overseeing the upgrade of the Samuel Ladoke Akintola Airport in Ibadan. The
+project — reported at around N41 billion — involves extending the runway from 2,400 to 3,000 metres
+and building a new terminal designed to raise annual passenger capacity from roughly 100,000 to one
+million, with the goal of achieving international status for the airport. The first phase began in
+September 2024. This is a current, verifiable executive responsibility and gives him direct knowledge
+of one of the flagship projects the next governor would inherit. He has also spoken publicly about the
+potential of Ibadan's airport to become an aviation hub attracting foreign carriers.`,
+  },
+  {
+    title: "Political History and Party Affiliation",
+    tags: ["politics", "party", "apc", "pdp", "apm", "history", "political", "affiliation", "switch"],
+    content: `Adekanmbi's route into politics was through appointment rather than election. He served in
+the APC administration of Governor Abiola Ajimobi (2011–2019) and contested the Oyo South senatorial
+seat on the APC platform in 2023, which was unsuccessful — his only electoral contest to date. He
+formally joined the Peoples Democratic Party (PDP) in December 2025. In May 2026 he became the
+governorship candidate of the Allied Peoples Movement (APM). If asked why a PDP member is the APM
+candidate: this is the mechanism of the PDP–APM alliance in Oyo State (widely credited to Governor
+Makinde), which allows the governing PDP structure and the APM platform to field a single ticket. On
+his movement between parties, Adekanmbi and Governor Makinde have both argued that competence should
+matter more than party label; two administrations of opposing parties (APC and PDP) each entrusted him
+with senior responsibility.`,
+  },
+  {
+    title: "2027 Governorship Candidacy and Endorsement",
+    tags: ["2027", "election", "candidate", "apm", "governor", "makinde", "endorsement", "governorship", "primary"],
     content: `In May 2026, Adekanmbi emerged as the consensus governorship candidate of the Allied
 Peoples Movement (APM) for the 2027 Oyo State governorship election, following the party's primary in
-Ibadan, and received the party's Certificate of Return. Oyo State Governor Seyi Makinde has publicly
-described him as his preferred successor. In his acceptance speech, Adekanmbi pledged to build on the
-policies and programmes of the Makinde administration. His declared priority areas are education,
-healthcare, agriculture, infrastructure, security, technology, tourism, and commerce.`,
+Ibadan, and received the party's flag and Certificate of Return. Oyo State Governor Seyi Makinde
+publicly named him his preferred successor, defending the choice with the argument that "party colour
+doesn't matter" and that competence should determine who is entrusted with governance. Makinde also
+advised him publicly: "Don't inherit my enemies, chart your own path." In his acceptance he pledged to
+build on the Makinde administration's programmes. The election is scheduled for Saturday, 6 February
+2027 (for governorship and state assembly seats), under INEC's revised timetable.`,
+  },
+  {
+    title: "Running Mate — Engr. Muftau 'Open' Salawu",
+    tags: ["running mate", "deputy", "salawu", "open", "ogbomoso", "ticket"],
+    content: `Adekanmbi's running mate (candidate for Deputy Governor) is Engr. Muftau "Open" Salawu,
+who was unveiled in June 2026 at the APM secretariat in Oke Ado, Ibadan. He is an Ogbomoso-born
+politician and entrepreneur with a background in engineering, project monitoring and public
+administration. The ticket is deliberately balanced by geography (an Ibadan-based principal with an
+Ogbomoso-zone running mate) and by faith (Adekanmbi is Christian and Salawu is Muslim).`,
   },
   {
     title: "Vision and Why He Is Running",
-    tags: ["why", "running", "motivation", "vision", "mission", "goal", "purpose", "competence", "continuity"],
-    content: `Adekanmbi presents his candidacy around the themes of competence, continuity, and
-capacity, drawing on his background as a chartered accountant and public finance manager. He has said
-his candidature is aimed at restoring hope and dignity to governance in Oyo State, and he has pledged
-inclusive governance and grassroots development. He has committed to sustaining and building on the
-development agenda of Governor Seyi Makinde's administration.`,
+    tags: ["why", "running", "motivation", "vision", "mission", "goal", "purpose", "competence", "continuity", "capacity"],
+    content: `Adekanmbi frames his candidacy around competence, continuity and capacity, drawing on his
+background as a chartered accountant and public finance manager. He has said his decision to contest
+was driven not by a desire for political power but by the need to provide purposeful and accountable
+leadership for the people of Oyo State. In his own words: "I am ready to be held accountable because
+governance is about the people and not about the individual occupying the office," and "I stand out. I
+have the experience and native intelligence to be the next governor of Oyo State." His core proposition
+is continuity with the Makinde administration — especially sustaining the regular payment of salaries
+and pensions — combined with a more data-driven method of his own, including using accurate data and a
+state poverty map to target resources where they are most needed.`,
   },
   {
     title: "Priority Areas",
     tags: ["priorities", "agenda", "plans", "policy", "focus", "manifesto"],
-    content: `Adekanmbi has publicly identified his focus areas as education, healthcare, agriculture,
-infrastructure, security, technology, tourism, and commerce. (CAMPAIGN TO CONFIRM: detailed policy
-proposals, targets, and specific programmes for each area should be added here by the campaign from
-the official manifesto. The AI should not state specific figures, timelines, or promises that are not
-written in this knowledge base.)`,
+    content: `Adekanmbi has identified his priority areas as the economy and investment, education,
+healthcare, agriculture, infrastructure, security, technology, youth employment, workers' welfare,
+tourism and commerce. He has promised a formal manifesto containing measurable targets for his first
+100 days, six months and one year in office. As at the research cut-off (10 September 2026) that
+manifesto had not yet been published, so the positions described in this knowledge base are his
+publicly stated directions of travel. For specific figures, costings, funding sources and timelines,
+the assistant should tell visitors these will be set out in the forthcoming manifesto and invite them
+to contact the campaign, rather than inventing details.`,
   },
   {
     title: "Education Policy",
-    tags: ["education", "schools", "students", "teachers", "learning", "skills"],
-    content: `Education is one of Adekanmbi's stated priority areas for Oyo State. (CAMPAIGN TO CONFIRM:
-the campaign should add the candidate's specific education proposals here — for example plans for
-public schools, teachers, technical and vocational skills, and access — using the official manifesto.
-Until then, the assistant should describe education only as a stated priority and avoid inventing
-specific promises.)`,
+    tags: ["education", "schools", "students", "teachers", "learning", "skills", "vocational", "out-of-school"],
+    content: `Education is one of Adekanmbi's priority areas. His stated positions are: rehabilitating
+public schools and providing essential learning facilities; strengthening technical and vocational
+education; and aligning the education system with the demands of the modern economy so students gain
+practical skills for employment and entrepreneurship. On out-of-school children, he has said: "I'll
+use accurate data to plan for out-of-school children and provide targeted intervention. We need a
+poverty map." He has also reflected personally that but for education he might have ended up as a meat
+seller, using this to underline how much schooling can change a life. Detailed programmes, targets and
+funding are expected in the forthcoming manifesto and have not yet been published.`,
   },
   {
     title: "Healthcare Policy",
-    tags: ["health", "healthcare", "hospitals", "clinics", "medical", "insurance"],
-    content: `Healthcare is one of Adekanmbi's stated priority areas. (CAMPAIGN TO CONFIRM: add the
-candidate's specific healthcare proposals here from the official manifesto — for example primary
-healthcare, hospitals, and affordability. The assistant should not state specific health programmes or
-figures that are not written here.)`,
+    tags: ["health", "healthcare", "hospitals", "clinics", "medical", "primary healthcare", "rural"],
+    content: `Healthcare is one of Adekanmbi's priority areas. His stated position is to strengthen
+primary healthcare centres across the state and improve access to affordable medical services, with
+particular attention to rural communities. He has said residents should not have to travel long
+distances to access basic healthcare. Detailed proposals, targets and funding are expected in the
+forthcoming manifesto and have not yet been published.`,
   },
   {
-    title: "Agriculture and Economy",
-    tags: ["agriculture", "farming", "farmers", "economy", "jobs", "commerce", "trade", "business"],
-    content: `Agriculture, commerce, and economic development are among Adekanmbi's stated priority
-areas, and his professional background is in finance and public financial management. (CAMPAIGN TO
-CONFIRM: add specific agriculture, jobs, and economic proposals here from the official manifesto. The
-assistant should not invent specific schemes, figures, or targets.)`,
+    title: "Agriculture and Food Security",
+    tags: ["agriculture", "farming", "farmers", "food", "value chain", "processing", "crops", "rural"],
+    content: `Adekanmbi describes agriculture as "a major area of opportunity" for Oyo State. His
+stated position is that the state must move beyond producing raw agricultural commodities into
+processing and value chains that create jobs and generate additional revenue. He proposes supporting
+farmers with improved access to inputs, modern farming techniques, financing, processing facilities
+and markets, and connecting farms to markets and urban areas through better roads. Specific schemes,
+targets and funding are expected in the forthcoming manifesto and have not yet been published.`,
   },
   {
-    title: "Infrastructure, Security, Technology and Tourism",
-    tags: ["infrastructure", "roads", "security", "technology", "digital", "tourism", "development", "airport"],
-    content: `Infrastructure, security, technology, and tourism are all among Adekanmbi's stated priority
-areas for Oyo State. He has also spoken publicly about the potential of Ibadan's airport as an aviation
-hub. (CAMPAIGN TO CONFIRM: add specific infrastructure, security, technology, and tourism proposals
-here from the official manifesto. The assistant should not invent specific projects, figures, or
-timelines.)`,
+    title: "Economy, Jobs and Youth Employment",
+    tags: ["economy", "jobs", "employment", "youth", "entrepreneurship", "business", "sme", "commerce", "investment"],
+    content: `Adekanmbi's stated economic approach is to create an investment- and business-friendly
+environment and to reduce the bureaucratic obstacles that entrepreneurs face. On youth employment, he
+argues government cannot be the primary employer, saying: "We cannot continue to tell our young people
+to wait for government jobs when the government alone cannot employ everybody. What we need is a
+government that will create the conditions for young people to become employers of labour." He proposes
+prioritising skills acquisition, entrepreneurship, and technical and vocational education so young
+people become economically productive. Specific programmes, targets and funding are expected in the
+forthcoming manifesto.`,
+  },
+  {
+    title: "Infrastructure, Roads and the Circular Road",
+    tags: ["infrastructure", "roads", "transport", "circular road", "development", "connectivity", "airport"],
+    content: `Infrastructure is one of Adekanmbi's priority areas. He proposes a coordinated approach to
+road development that emphasises connectivity between rural communities, agricultural centres, markets
+and urban areas. He has committed specifically to completing the Ibadan Circular Road, and has
+disclosed that he personally lost land in the Ona-Ara area to the project's right of way, saying no
+sacrifice is too great for the state's advancement and pledging to deliver the project regardless. He
+also chairs the committee overseeing the c. N41 billion upgrade of the Samuel Ladoke Akintola Airport,
+Ibadan. Specific figures and timelines for the wider road programme are expected in the forthcoming
+manifesto.`,
+  },
+  {
+    title: "Security",
+    tags: ["security", "safety", "policing", "abduction", "oriire", "kidnapping", "rural security"],
+    content: `Security is one of Adekanmbi's priority areas, and he argues that economic development is
+difficult to achieve without adequate security — residents and investors need to be able to live, work
+and do business safely. His stated position is to strengthen collaboration between government, security
+agencies and communities to improve the security of lives and property across the state. In May 2026
+he led an APM delegation on a condolence visit to the Ahoro-Esinele, Yawota and neighbouring Oriire
+communities following an attack and abductions there, and expressed confidence in the rescue efforts
+of the state government and security agencies. A detailed, specific security policy is expected in the
+forthcoming manifesto; as at the research cut-off his public position on security was directional
+rather than detailed.`,
+  },
+  {
+    title: "Public Finance and Workers' Welfare",
+    tags: ["finance", "salaries", "pensions", "workers", "fiscal", "budget", "igr", "revenue", "welfare"],
+    content: `Public finance is Adekanmbi's core area of expertise, as a chartered accountant and former
+Commissioner for Finance, Budget and Planning. He has committed to sustaining the regular payment of
+workers' salaries and pensions, saying: "I won't have a problem paying workers' salaries and pensions
+because Governor Makinde has set a standard, and I have learnt a lot from his administration." He has
+pledged to run a transparent and accountable administration in which public resources are used for the
+benefit of the people. Detailed forward positions on internally generated revenue (IGR), taxation and
+state debt strategy have not yet been set out publicly and are expected in the forthcoming manifesto.`,
+  },
+  {
+    title: "Technology, Digital Government and Data-Driven Governance",
+    tags: ["technology", "digital", "data", "innovation", "poverty map", "governance", "systems"],
+    content: `Technology and data-driven governance are a consistent theme for Adekanmbi. He is a
+certified SAP FICO consultant and a pioneer member of the NESG Digital Economy Policy Commission
+(2020). He proposes evidence-led governance: using accurate data for planning, and building a
+comprehensive state poverty map to determine where poverty is concentrated and direct resources
+accordingly. He has indicated that the forthcoming manifesto will include a dedicated section on
+digital economy and innovation, aimed partly at expanding access to education. Specific programmes and
+targets have not yet been published.`,
+  },
+  {
+    title: "Tourism, Culture and Commerce",
+    tags: ["tourism", "culture", "commerce", "trade", "heritage"],
+    content: `Tourism, culture and commerce are among the areas Adekanmbi has pledged to build on from
+the Makinde administration's programmes. As at the research cut-off, his position on these areas was
+directional rather than detailed, and specific tourism or cultural policy proposals had not yet been
+published. Detail is expected in the forthcoming manifesto.`,
+  },
+  {
+    title: "Leadership Philosophy",
+    tags: ["leadership", "philosophy", "accountability", "values", "principles", "transparency", "criticism"],
+    content: `Adekanmbi presents governance as a relationship of accountability rather than a possession
+of office, saying "governance is about the people and not about the individual occupying the office."
+He publicly welcomes criticism: "I am not going into government to silence people. If you see something
+that is wrong, tell me. If I make a mistake, criticise me. If the criticism is constructive, it will
+help us to correct ourselves and serve the people better." His documented principles include competence
+over party affiliation, evidence-based governance, transparency, fiscal discipline, and a limited view
+of the state as employer (with the private sector creating most jobs). He cites exposure to several
+former Oyo governors — Ladoja, Alao-Akala, Ajimobi and Makinde — as having given him different
+approaches to governance to learn from.`,
   },
   {
     title: "Awards and Recognitions",
     tags: ["awards", "recognition", "honour", "honours", "achievements", "scout"],
-    content: `Adekanmbi has received several recognitions, including the Award of Exemplary Service from
-the Aj'orosun Club, Ibadan (2022); the Man of Honour Award from Solutions FM, Ibadan (2024); and the
-Christian Prestigious Award (CPA) from the Central Council of Ibadan Indigenes (CCII) in 2025. In 2025
-he was invested as President of the Oyo State Council of the Scout Association of Nigeria.`,
+    content: `Adekanmbi has received several community, media and association recognitions, including the
+Award of Exemplary Service from the Aj'orosun Club, Ibadan (2022); the Man of Honour Award from
+Solutions FM, Ibadan (2024); and the Christian Prestigious Award (CPA) from the Central Council of
+Ibadan Indigenes (CCII) in 2025. In 2025 he was invested as President of the Oyo State Council of the
+Scout Association of Nigeria. These are local Ibadan-based honours that reflect his standing and
+recognition in the community.`,
   },
   {
     title: "Family and Personal Life",
-    tags: ["family", "wife", "married", "children", "personal", "religion", "christian"],
-    content: `Adekanmbi is married to Dr. Olukemi Adekanmbi, a Senior Lecturer in the Department of
-Medicine, College of Medicine, University of Ibadan, and Acting Director of the college's Infectious
-Disease Institute. They have three children, and the family lives in Ibadan, Oyo State.`,
+    tags: ["family", "wife", "married", "children", "personal", "religion", "christian", "spouse"],
+    content: `Adekanmbi is a Christian and is married to Dr. Olukemi Adekanmbi, a Senior Lecturer in the
+Department of Medicine, College of Medicine, University of Ibadan, and Acting Director of the college's
+Infectious Disease Institute. They have three children, and the family lives in Ibadan, Oyo State. His
+late father, Reverend Olalere Adekanmbi, was a clergyman and a founding member of the Omo Aj'orosun
+Club in Ibadan; his mother, Madam Ashiyanbi Adekanmbi, was a well-known trader in Bodija Market.`,
+  },
+  {
+    title: "Campaign, the Thank-You Tour and Stakeholder Engagement",
+    tags: ["campaign", "tour", "thank you tour", "rally", "zones", "engagement", "stakeholders", "outreach"],
+    content: `Following his emergence as candidate, Adekanmbi and his running mate conducted a statewide
+"Thank-You Tour" of Oyo State from June to July 2026, reaching all of the state's zones — Ibadan
+metropolitan constituencies, the Ibadan periphery (Ido, Oluyole, Akinyele), Ibarapa, the Ogbomoso zone
+(Ogbomoso, Surulere, Ogo-Oluwa), the Oyo zone, and the Oke-Ogun / Oyo North axis (concluding with the
+Saki and Iseyin legs). The tour's stated purpose was to thank party members, build unity, and listen
+to local stakeholders so the campaign's roadmap reflects their needs. He has engaged party structures,
+traditional rulers (including the Aseyin of Iseyin), women's groups, youth wings, and the media. He has
+said his campaign will focus on issues affecting residents rather than personal attacks on opponents.`,
+  },
+  {
+    title: "Understanding Oyo State (Context)",
+    tags: ["oyo state", "context", "state", "population", "lga", "zones", "igr", "voters"],
+    content: `Oyo State comprises 33 Local Government Areas across distinct zones — Ibadan metropolitan,
+the Ibadan periphery, Ibarapa, the Ogbomoso zone, the Oyo zone, and Oke-Ogun (the state's agricultural
+heartland) — with materially different economies and needs. Governor Seyi Makinde is term-limited,
+making 2027 an open governorship race. The incumbent administration is widely credited with a strong
+recent record on revenue and on the regular payment of salaries and pensions. The most acute inherited
+challenge is security, following the abduction of pupils and teachers from Oriire Local Government Area
+in 2026 (those abducted regained freedom in July 2026). A new governor would also inherit major capital
+projects mid-delivery, including the Ibadan Circular Road and the Ibadan airport upgrade. When quoting
+specific state statistics (such as IGR figures), note that public figures vary and should be confirmed
+against official Oyo State budget documents before use.`,
+  },
+  {
+    title: "What He Has Achieved (Verified vs His Own Account)",
+    tags: ["achievements", "record", "verified", "accomplishments", "delivered", "results"],
+    content: `It helps to separate what is independently documented from what rests on the candidate's
+own account. Independently documented: his senior appointments across two administrations of opposing
+parties (Deputy Chief of Staff and Commissioner for Finance under the APC's Ajimobi; airport committee
+chairman under the PDP's Makinde); his emergence as APM governorship candidate with Governor Makinde's
+public endorsement; and completion of a statewide Thank-You Tour. Based on his own account (and awaiting
+documentation): automating the state's salary payment process, an intervention that preserved World
+Bank funding for the Ibadan Urban Flood Management Project, and specific delivery outcomes from his UK
+consulting career. When discussing his record, the assistant should present the documented items
+plainly and attribute the self-reported items to him rather than stating them as established fact.`,
+  },
+  {
+    title: "Criticisms and Difficult Questions",
+    tags: ["criticism", "controversy", "godfather", "godfatherism", "party switching", "opportunism", "difficult", "questions"],
+    content: `An honest assistant should be able to address the main criticisms fairly. The recurring
+ones are: (1) Godfatherism — that because Governor Makinde endorsed him before the primary and he was
+adopted by consensus, his candidacy reflects imposition. Both Adekanmbi and Makinde have publicly
+rejected this; Makinde has said he will not become a political godfather and told him to "chart your
+own path." Whether the endorsement amounts to godfatherism is a matter of political opinion, on which
+reasonable people differ. (2) Party-switching — moving from APC to PDP to an APM ticket within about
+eighteen months. The sequence is factual; he and Makinde argue competence should outweigh party label,
+and note that two opposing administrations each trusted him with senior roles. (3) Accountability for
+Ajimobi-era finances — as former finance commissioner he has himself spoken publicly about
+mismanagement in that administration. Importantly, no criminal conviction, indictment, prosecution or
+adverse court or regulatory finding against him personally was located in public sources. This is a
+sensitive, nuanced topic; the assistant should stick to these documented points, avoid speculation
+about motives, and suggest visitors contact the campaign for a fuller account.`,
+  },
+  {
+    title: "Frequently Asked Questions",
+    tags: ["faq", "questions", "age", "born", "from", "lga", "married", "office", "election date", "spelling"],
+    content: `Quick answers to common questions. How old is he / when was he born? His public date of
+birth is 5 April 1973 (born in Ibadan); the campaign can confirm the exact date. Where is he from? He
+was born and raised in Ibadan, Oyo State; his family compound is Ile Ojo Seriki, Beyerunka, Ibadan.
+His specific Local Government Area of origin is not stated in public sources and should be confirmed
+with the campaign. Is he married? Yes, to Dr. Olukemi Adekanmbi, a University of Ibadan clinical
+academic; they have three children. Which party is he running for? The Allied Peoples Movement (APM),
+under the PDP–APM alliance in Oyo State. Has he held elective office before? No — his previous public
+offices were by appointment; he contested (unsuccessfully) the Oyo South senatorial seat in 2023. When
+is the election? Saturday, 6 February 2027. Why are there two spellings of his name? "Adekanbi" and
+"Adekanmbi" refer to the same person.`,
   },
   {
     title: "How to Get Involved",
