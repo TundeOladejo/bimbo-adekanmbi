@@ -21,7 +21,7 @@ function Doodle({
 }: DoodleProps & { children: React.ReactNode }) {
   return (
     <span
-      className={`absolute animate-float text-white/[0.09] ${className}`}
+      className={`absolute animate-float text-brand/[0.07] ${className}`}
       style={{ animationDelay: `${delay}s` }}
     >
       {children}

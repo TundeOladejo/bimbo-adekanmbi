@@ -18,7 +18,17 @@ function initials(name: string) {
   return (parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? "");
 }
 
-export default function Chat({ initialQuestion }: { initialQuestion?: string }) {
+export default function Chat({
+  initialQuestion,
+  className = "",
+  showSuggestions = true,
+}: {
+  initialQuestion?: string;
+  /** Extra classes to control the height/shape where the chat is embedded. */
+  className?: string;
+  /** Show the built-in suggestion chips in the empty state. */
+  showSuggestions?: boolean;
+}) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -86,11 +96,12 @@ export default function Chat({ initialQuestion }: { initialQuestion?: string }) 
     }
   }
 
-  const lastIsEmptyAssistant =
-    loading && messages.length > 0 && messages[messages.length - 1].content === "";
-
   return (
-    <div className="flex h-[72vh] max-h-[680px] flex-col overflow-hidden rounded-4xl border border-ink-900/5 bg-white shadow-lift">
+    <div
+      className={`flex flex-col overflow-hidden rounded-4xl border border-ink-900/5 bg-white shadow-lift ${
+        className || "h-[72vh] max-h-[680px]"
+      }`}
+    >
       {/* Header */}
       <div className="flex items-center gap-3 border-b border-ink-900/5 bg-brand px-5 py-4 text-white">
         {candidate.photo ? (
@@ -128,17 +139,19 @@ export default function Chat({ initialQuestion }: { initialQuestion?: string }) 
               Ẹ káàbọ̀ — thank you for stopping by. It&apos;s {candidate.shortName}. Ask me anything
               about my record, my plans for Oyo State, or the things you&apos;re concerned about.
             </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {SUGGESTIONS.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => send(s)}
-                  className="rounded-full border border-ink-900/10 bg-white px-3.5 py-2 text-sm text-ink-700 transition-all hover:-translate-y-0.5 hover:border-brand hover:text-brand hover:shadow-soft"
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
+            {showSuggestions && (
+              <div className="mt-4 flex flex-wrap justify-center gap-2">
+                {SUGGESTIONS.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => send(s)}
+                    className="rounded-full border border-ink-900/10 bg-white px-3.5 py-2 text-sm text-ink-700 transition-all hover:-translate-y-0.5 hover:border-brand hover:text-brand hover:shadow-soft"
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
@@ -192,7 +205,8 @@ export default function Chat({ initialQuestion }: { initialQuestion?: string }) 
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your question…"
-          className="flex-1 rounded-full border border-ink-900/10 bg-cloud px-4 py-3 text-ink-700 outline-none transition-shadow placeholder:text-ink-300 focus:border-brand focus:ring-4 focus:ring-brand/10"
+          enterKeyHint="send"
+          className="min-w-0 flex-1 rounded-full border border-ink-900/10 bg-cloud px-4 py-3 text-base text-ink-700 outline-none transition-shadow placeholder:text-ink-300 focus:border-brand focus:ring-4 focus:ring-brand/10"
           disabled={loading}
         />
         <button

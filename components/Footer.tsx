@@ -16,7 +16,7 @@ export default function Footer() {
   ].filter((s) => s.href);
 
   return (
-    <footer className="mt-20 bg-brand-dark text-white/70">
+    <footer className="mt-10 bg-brand-dark">
       <div className="mx-auto max-w-6xl px-5 py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* brand */}
@@ -86,7 +86,6 @@ export default function Footer() {
 
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/40">
         <p>© {new Date().getFullYear()} {candidate.name} for {candidate.office}. All rights reserved.</p>
-        <p className="mt-1 text-white/30">Paid for by the {candidate.name} Campaign Organisation.</p>
       </div>
     </footer>
   );

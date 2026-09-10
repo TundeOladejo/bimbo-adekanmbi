@@ -5,6 +5,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Fluid root font size: because all sizing is in rem, this scales the whole
+       page — text, spacing, buttons, chat — smoothly with the viewport. Keeps
+       the visual size consistent across a small laptop panel and a large
+       external monitor, instead of jumping at breakpoints.
+       Floor 14px (never too small) → grows with width → ceiling 16px. */
+    font-size: clamp(14px, 0.85rem + 0.2vw, 16px);
   }
 
   body {

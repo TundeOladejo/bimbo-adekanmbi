@@ -19,7 +19,7 @@ export default async function ChatPage({
         <span className="eyebrow justify-center">
           <span className="h-1.5 w-1.5 rounded-full bg-gold" /> A direct conversation
         </span>
-        <h1 className="font-display mt-3 text-3xl font-semibold tracking-tight text-brand-dark sm:text-4xl">
+        <h1 className="font-display mt-3 text-[1.75rem] font-semibold tracking-tight text-brand-dark sm:text-4xl">
           Talk with {candidate.shortName}
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-ink-500">

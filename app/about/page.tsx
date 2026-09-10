@@ -59,7 +59,7 @@ export default function AboutPage() {
           <span className="eyebrow text-sky-light">
             <span className="gold-rule !w-6" /> The candidate
           </span>
-          <h1 className="font-display mt-4 text-4xl font-semibold text-white sm:text-6xl">
+          <h1 className="font-display mt-4 text-[2rem] font-semibold text-white sm:text-5xl">
             {candidate.name}
           </h1>
           <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-lg text-white/60">
