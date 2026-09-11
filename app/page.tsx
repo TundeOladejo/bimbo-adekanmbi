@@ -23,21 +23,50 @@ export default function Home() {
           <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(24rem,30rem)] lg:gap-16 xl:gap-20">
             {/* intro copy — minimal on mobile, fuller on desktop */}
             <div className="flex max-w-2xl animate-fade-up flex-col items-center text-center lg:items-start lg:text-left">
-              {/* candidate photo + name — clean and centered on mobile */}
-              <div className="flex flex-col items-center gap-3 lg:flex-row lg:items-center lg:gap-4">
+              {/* candidate photo + name — a compact circle on mobile, and the
+                  original framed rounded-rectangle portrait on desktop. Caption
+                  sits under the picture so the photo gets the full space. */}
+              <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-5">
                 {candidate.photo && (
-                  <div className="relative shrink-0">
-                    <span className="absolute -inset-1 rounded-full bg-gradient-to-tr from-gold/60 to-sky/40 blur-[2px]" aria-hidden />
-                    <Image
-                      src={candidate.photo}
-                      alt={`${candidate.name}, candidate for ${candidate.office}`}
-                      width={160}
-                      height={160}
-                      priority
-                      sizes="112px"
-                      className="relative h-16 w-16 rounded-full object-cover object-top ring-2 ring-white sm:h-24 sm:w-24 lg:h-28 lg:w-28"
-                    />
-                  </div>
+                  <>
+                    {/* mobile / tablet: clean circle */}
+                    <div className="relative shrink-0 lg:hidden">
+                      <span className="absolute -inset-1 rounded-full bg-gradient-to-tr from-gold/60 to-sky/40 blur-[2px]" aria-hidden />
+                      <Image
+                        src={candidate.photo}
+                        alt={`${candidate.name}, candidate for ${candidate.office}`}
+                        width={160}
+                        height={160}
+                        priority
+                        sizes="96px"
+                        className="relative h-16 w-16 rounded-full object-cover object-top ring-2 ring-white sm:h-24 sm:w-24"
+                      />
+                    </div>
+
+                    {/* desktop: framed portrait with offset gold frame, scrim
+                        and a floating verified chip (the original hero style) */}
+                    <div className="relative hidden w-56 shrink-0 lg:block xl:w-64">
+                      <div className="absolute -right-3 -top-3 bottom-5 left-5 rounded-[1.5rem] border-2 border-gold/50" aria-hidden />
+                      <div className="relative overflow-hidden rounded-[1.5rem] bg-brand-light shadow-lift ring-1 ring-ink-900/5">
+                        <Image
+                          src={candidate.photo}
+                          alt={`Portrait of ${candidate.name}`}
+                          width={480}
+                          height={600}
+                          priority
+                          sizes="(min-width: 1280px) 256px, 224px"
+                          className="aspect-[4/5] w-full object-cover object-top"
+                        />
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-dark/70 to-transparent" />
+                      </div>
+                      <div className="absolute -bottom-3 -left-3 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-lift">
+                        <span className="grid h-6 w-6 place-items-center rounded-full bg-gold text-brand-dark">
+                          <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 5 5L20 7" /></svg>
+                        </span>
+                        <span className="text-[11px] font-semibold text-brand-dark">FCCA</span>
+                      </div>
+                    </div>
+                  </>
                 )}
                 <div className="flex flex-col items-center gap-1.5 lg:items-start">
                   <p className="font-display text-base font-semibold text-brand-dark lg:hidden">
