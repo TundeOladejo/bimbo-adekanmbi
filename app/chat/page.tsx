@@ -12,6 +12,7 @@ export default async function ChatPage({
 }) {
   const { q } = await searchParams;
   const initialQuestion = typeof q === "string" ? q.slice(0, 300) : undefined;
+  const escalationEnabled = Boolean(process.env.GOOGLE_SHEETS_WEBHOOK_URL);
 
   return (
     <section className="mx-auto max-w-3xl px-5 py-14 sm:py-16">
@@ -28,7 +29,7 @@ export default async function ChatPage({
         </p>
       </div>
 
-      <Chat initialQuestion={initialQuestion} />
+      <Chat initialQuestion={initialQuestion} escalationEnabled={escalationEnabled} />
 
       <p className="mt-4 text-center text-xs text-ink-300">
         This conversation is powered by AI and speaks on {candidate.shortName}&apos;s behalf using his

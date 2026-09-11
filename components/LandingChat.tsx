@@ -16,7 +16,11 @@ const STARTERS = [
  * straight into the conversation — no navigation. Chips clear once the
  * conversation begins to keep things clean.
  */
-export default function LandingChat() {
+export default function LandingChat({
+  escalationEnabled = false,
+}: {
+  escalationEnabled?: boolean;
+}) {
   const [starter, setStarter] = useState<string | undefined>();
   const [started, setStarted] = useState(false);
 
@@ -25,6 +29,7 @@ export default function LandingChat() {
       <Chat
         initialQuestion={starter}
         showSuggestions={false}
+        escalationEnabled={escalationEnabled}
         className="h-[62vh] max-h-[560px] min-h-[24rem]"
       />
 

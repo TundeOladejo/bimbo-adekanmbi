@@ -6,6 +6,7 @@ import LandingChat from "@/components/LandingChat";
 
 export default function Home() {
   const first = candidate.shortName;
+  const escalationEnabled = Boolean(process.env.GOOGLE_SHEETS_WEBHOOK_URL);
 
   return (
     <>
@@ -85,7 +86,7 @@ export default function Home() {
 
             {/* live chat — visible in the first fold */}
             <div className="animate-fade-up delay-2">
-              <LandingChat />
+              <LandingChat escalationEnabled={escalationEnabled} />
             </div>
           </div>
 

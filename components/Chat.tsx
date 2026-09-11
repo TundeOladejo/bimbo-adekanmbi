@@ -22,12 +22,15 @@ export default function Chat({
   initialQuestion,
   className = "",
   showSuggestions = true,
+  escalationEnabled = false,
 }: {
   initialQuestion?: string;
   /** Extra classes to control the height/shape where the chat is embedded. */
   className?: string;
   /** Show the built-in suggestion chips in the empty state. */
   showSuggestions?: boolean;
+  /** Whether the escalation capture (name/phone) is configured and should show. */
+  escalationEnabled?: boolean;
 }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -35,9 +38,15 @@ export default function Chat({
   const scrollRef = useRef<HTMLDivElement>(null);
   const autoSent = useRef(false);
 
+  // Escalation capture (name + phone) shown when the assistant declines.
+  const [escName, setEscName] = useState("");
+  const [escPhone, setEscPhone] = useState("");
+  const [escState, setEscState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [escError, setEscError] = useState("");
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, loading]);
+  }, [messages, loading, escState]);
 
   // If the visitor arrived from a homepage question (/chat?q=...), ask it once.
   useEffect(() => {
@@ -95,6 +104,51 @@ export default function Chat({
       setLoading(false);
     }
   }
+
+  async function submitEscalation(e: React.FormEvent) {
+    e.preventDefault();
+    if (escState === "sending") return;
+    setEscError("");
+
+    if (!escName.trim() || escPhone.replace(/\D/g, "").length < 7) {
+      setEscError("Please enter your full name and a valid phone number.");
+      return;
+    }
+
+    setEscState("sending");
+    // The last user message gives the team context on what was asked.
+    const lastUser = [...messages].reverse().find((m) => m.role === "user");
+
+    try {
+      const res = await fetch("/api/escalate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: escName,
+          phone: escPhone,
+          message: lastUser?.content ?? "",
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Could not submit. Please try again.");
+      }
+      setEscState("done");
+    } catch (err) {
+      setEscState("error");
+      setEscError(err instanceof Error ? err.message : "Could not submit. Please try again.");
+    }
+  }
+
+  // Detect the assistant's escalation reply so we can offer a capture form.
+  // Only show it when escalation capture is actually configured on the server.
+  const lastMsg = messages[messages.length - 1];
+  const showEscalation =
+    escalationEnabled &&
+    !loading &&
+    lastMsg?.role === "assistant" &&
+    /full name/i.test(lastMsg.content) &&
+    /phone number/i.test(lastMsg.content);
 
   return (
     <div
@@ -191,6 +245,51 @@ export default function Chat({
             </div>
           </div>
         ))}
+
+        {/* Escalation capture form — appears when the assistant declines and
+            asks for the visitor's contact details. */}
+        {showEscalation && escState !== "done" && (
+          <div className="ml-10 max-w-[85%] rounded-3xl rounded-bl-md border border-brand/15 bg-brand-light/50 p-4">
+            <p className="text-sm font-medium text-brand-dark">Leave your details for a follow-up</p>
+            <form onSubmit={submitEscalation} className="mt-3 space-y-2.5">
+              <input
+                value={escName}
+                onChange={(e) => setEscName(e.target.value)}
+                placeholder="Full name"
+                autoComplete="name"
+                className="w-full rounded-xl border border-ink-900/10 bg-white px-3.5 py-2.5 text-base text-ink-700 outline-none focus:border-brand focus:ring-4 focus:ring-brand/10"
+                disabled={escState === "sending"}
+              />
+              <input
+                value={escPhone}
+                onChange={(e) => setEscPhone(e.target.value)}
+                placeholder="Phone number"
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel"
+                className="w-full rounded-xl border border-ink-900/10 bg-white px-3.5 py-2.5 text-base text-ink-700 outline-none focus:border-brand focus:ring-4 focus:ring-brand/10"
+                disabled={escState === "sending"}
+              />
+              {escError && <p className="text-xs text-red-600">{escError}</p>}
+              <button
+                type="submit"
+                disabled={escState === "sending"}
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark disabled:opacity-50"
+              >
+                {escState === "sending" ? "Submitting…" : "Submit details"}
+              </button>
+            </form>
+          </div>
+        )}
+
+        {showEscalation && escState === "done" && (
+          <div className="ml-10 max-w-[85%] rounded-3xl rounded-bl-md border border-green-200 bg-green-50 p-4">
+            <p className="text-sm font-medium text-green-800">
+              Thank you — your details have been received. The appropriate team will follow up with
+              you.
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Input */}

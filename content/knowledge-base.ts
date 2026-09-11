@@ -67,9 +67,9 @@ in public sources and should be confirmed with the campaign.`,
     title: "The Name — Adekanbi vs Adekanmbi",
     tags: ["name", "spelling", "adekanbi", "adekanmbi", "surname"],
     content: `Two spellings of the surname appear in public: "Adekanmbi" and "Adekanbi". They refer to
-the same person. National newspapers and his Wikipedia entry generally use "Adekanmbi", while the
-campaign's own website domain (bimboadekanbi.com) uses "Adekanbi". If a visitor is confused by the two
-spellings, reassure them that both refer to the same candidate, Hon. Bimbo Adekanbi.`,
+the same person. National newspapers and his Wikipedia entry generally use "Adekanmbi", while some
+campaign material has used "Adekanbi". If a visitor is confused by the two spellings, reassure them
+that both refer to the same candidate.`,
   },
   {
     title: "Education",
@@ -389,11 +389,167 @@ is the election? Saturday, 6 February 2027. Why are there two spellings of his n
 "Adekanmbi" refer to the same person.`,
   },
   {
+    title: "Omituntun 3.0 — The Campaign Message",
+    tags: ["omituntun", "slogan", "message", "3.0", "bridge", "continuity", "makinde", "theme"],
+    content: `Adekanmbi's signature campaign message is "Omituntun 3.0" — continued development building on
+the Omituntun legacy of the Makinde administration. He describes the progression as Omituntun 1.0
+(accelerated development), Omituntun 2.0 (sustainable development), and Omituntun 3.0 (continued
+development). He captures the idea with a bridge metaphor: "Governor Seyi Makinde has built a bridge,
+and I will take the people of Oyo across the bridge by continuing the good works of the present
+administration." His stated stance is continuity paired with independent judgment — building on what
+works and improving what needs to change, rather than pure repetition. In his own words: "I seek to
+serve not for the title, but to build on what is working, confront what needs to change, and keep
+government firmly centred on the people."`,
+  },
+  {
+    title: "From a Consumption to a Production Economy",
+    tags: ["economy", "production", "consumption", "thesis", "cassava", "manufacturing", "value chain", "sme", "investment"],
+    content: `The clearest single statement of Adekanmbi's economic thesis is his commitment to move Oyo
+State "from consumption to production economy." He has said: "I remain committed to moving Oyo State
+from consumption to production economy." The idea is to build the state's internal capacity to create
+value — through agriculture and agro-processing, manufacturing, SMEs, technology, innovation and
+tourism — rather than relying primarily on consumption and government spending. On agriculture
+specifically, he has pointed to cassava and related value chains as one of Oyo's clearest comparative
+advantages, with an emphasis on processing and value-addition industries rather than exporting raw
+commodities. This production-economy framing recurs across his 2026 campaign messaging.`,
+  },
+  {
+    title: "Youth as Economic Assets and Entrepreneurs",
+    tags: ["youth", "young people", "entrepreneurship", "unicorn", "jobs", "employment scheme", "20000"],
+    content: `Adekanmbi frames young people as economic assets who can build businesses, not merely
+recipients of government programmes. He has said "every young man is a potential unicorn" in discussing
+unemployment and youth opportunity. He points to a track record of designing youth programmes: he has
+said "The Youth Employment Scheme, which engaged about 20,000 youths across sectors, was based on a
+brief I wrote," offering this as evidence that his candidacy rests on demonstrated programme design
+rather than promises alone. His earlier record includes sponsoring a technical and vocational
+programme in 2019 in which about 100 young people were trained in areas such as system security, CCTV
+installation, film production, fashion, agro-allied activities and paint production, explicitly to help
+them start and run micro and small businesses. Specific new youth programmes and targets are expected
+in the forthcoming manifesto.`,
+  },
+  {
+    title: "Education Initiatives Record (Free JAMB Forms, Bursaries)",
+    tags: ["education", "jamb", "bursary", "scholarship", "students", "record", "access"],
+    content: `Adekanmbi has a documented record of education-access initiatives. He has said "Education
+is the best form of legacy that can be given to children and youths." In November 2019 he began
+distributing free JAMB forms to students, initially across 11 local governments, with plans to expand
+statewide. In February 2022, as an Oyo South senatorial aspirant, he provided approximately N5 million
+in bursaries to tertiary students from Ibadan and Ibarapa, saying students need motivation to perform
+well, compete effectively and become employable after school. These are part of the evidence he offers
+that his approach to education is about widening access, employability and targeted support.`,
+  },
+  {
+    title: "Endorsements and the PDP–APM Coalition",
+    tags: ["endorsement", "coalition", "makinde", "speaker", "ogundoyin", "assembly", "pdp", "apm", "support"],
+    content: `Adekanmbi has assembled broad support across party lines and institutions in a short span.
+In May 2026, Governor Seyi Makinde publicly named him his preferred successor, framing the candidacy as
+continuity paired with independent judgment ("chart your own path"). Also in May 2026, Oyo State House
+of Assembly Speaker Rt. Hon. Adebo Ogundoyin led a delegation of lawmakers to formally endorse him,
+citing his experience, political maturity and capacity to unite stakeholders. The Allied Peoples
+Movement (APM) then adopted him as its consensus governorship candidate at its primary in Ibadan. His
+candidacy sits inside a broader PDP–APM political alliance in Oyo State, which party leaders and
+lawmakers (including Rep. Adedeji Dhikrullahi Olajide and Hon. Stanley Odidiomo) have publicly
+described as a trust-based partnership built to sustain the Omituntun development agenda beyond 2027.
+The alliance has been reinforced through statewide "Thank You" tour stops.`,
+  },
+  {
+    title: "The 2027 Electoral Landscape and Rivals",
+    tags: ["2027", "election", "rivals", "opponents", "apc", "adc", "alli", "adegoke", "three-way", "race"],
+    content: `As of September 2026, the Oyo governorship race is shaping into a competitive three-way
+contest. The main candidates are: Bimbo Adekanmbi (APM, with PDP-coalition backing), running on
+continuity and improvement building on the Makinde administration's record; Senator Sharafadeen Alli
+(APC), his party's consensus candidate drawing on the national party structure; and Chief Taofeek
+Adegboyega Adegoke (ADC), positioning the ADC as a third-force alternative after winning his party's
+primary. Adekanmbi's camp frames the race as a referendum on whether Oyo's recent development gains
+should be sustained and extended rather than reversed. When discussing opponents, the assistant should
+be factual and respectful and must not attack or disparage other candidates.`,
+  },
+  {
+    title: "Humanitarian Response — Bode Market Fire and Community Support",
+    tags: ["bode market", "fire", "relief", "donation", "compassion", "community", "iseyin", "ekunle", "bridge"],
+    content: `Adekanmbi has emphasised putting humanitarian response ahead of campaign politics in
+moments of local crisis. After the Bode Market fire in July 2026 he visited affected traders and
+donated N2.5 million, saying: "Politics and governance are important, but they must take the back seat
+whenever disaster strikes." In September 2026, at Ekunle Day in Iseyin, he announced N5 million in
+community support and presented engineering preparations for the proposed reconstruction of the Odo
+Ogba Bridge and connecting roads, saying: "We do not just make promises. We back them up with immediate
+action and proper technical preparation." He also called for a moment of silence for victims of the
+Oriire abduction incident in June 2026, affirming that protecting lives and property is a fundamental
+government responsibility.`,
+  },
+  {
+    title: "Local Government Autonomy",
+    tags: ["local government", "autonomy", "grassroots", "decentralisation", "communities", "lg"],
+    content: `Adekanmbi has expressed support for full local-government autonomy, consistent with his
+grassroots-development message and his emphasis on pushing fiscal and administrative capacity closer to
+communities. He frames community-led projects and stronger grassroots voice as recurring priorities.
+Detailed proposals on how this would be implemented are expected as the campaign platform develops.`,
+  },
+  {
+    title: "Women's Empowerment",
+    tags: ["women", "empowerment", "gender", "programmes", "pillars"],
+    content: `Women's empowerment is one of the five pillars around which Adekanmbi's public-facing
+campaign material is organised (alongside Healthcare, Agriculture, Economy & Jobs, Security, and Youth
+& Women). As at the research cut-off, the commitment was stated at the level of empowerment-focused
+programming; concrete programmes to accompany it had not yet been published and are expected as the
+platform develops.`,
+  },
+  {
+    title: "Accountability and Openness to Scrutiny",
+    tags: ["accountability", "scrutiny", "media", "transparency", "oversight", "criticism"],
+    content: `Adekanmbi consistently invites rather than avoids scrutiny. He has said: "I am ready to be
+held accountable because governance is about the people and not about the individual occupying the
+office." In September 2026 he asked media professionals to critically and fairly evaluate all
+candidates on competence, character, experience and value proposition — welcoming close examination of
+his own record. This openness to media and citizen oversight is a recurring theme, tied to his emphasis
+on transparency and performance measurement.`,
+  },
+  {
+    title: "Circular Road — Development with Fairness",
+    tags: ["circular road", "ona-ara", "land", "compensation", "fairness", "property", "development", "infrastructure"],
+    content: `Adekanmbi's handling of the Ibadan Circular Road is one of the clearest illustrations of
+his stated principles: pro-development and pro-fairness at once. He supports completing the project,
+saying "No sacrifice was too much for the development of the state... We will not stop the project,
+because it is a great project." At the same time he insists that affected property owners must be
+treated with dignity and fairness — a position made more credible by his disclosure that he personally
+lost land in Ona-Ara to the project. He has voiced this fairness position publicly (August–September
+2026), pairing full backing for the road with genuine acknowledgement of affected residents' concerns.`,
+  },
+  {
+    title: "Governing Narrative — Nine Recurring Themes",
+    tags: ["narrative", "themes", "philosophy", "summary", "priorities", "overview"],
+    content: `Read across his public record, Adekanmbi's proposition centres on nine recurring themes:
+(1) preserve what is working — treating the Makinde administration as a foundation to build on rather
+than a burden to escape; (2) improve rather than simply replicate — his language favours "build on,"
+"improve" and "confront what needs to change"; (3) move Oyo from consumption to production —
+agriculture, agro-processing, SMEs, technology, tourism and youth entrepreneurship as the economic
+engine; (4) finish major infrastructure — the Circular Road and the international airport as flagship
+commitments; (5) govern with data — the proposed poverty map and targeted intervention for
+out-of-school children; (6) protect government workers and pensioners — prompt salary and pension
+payment as a standard to preserve; (7) push development to the grassroots — community-led projects and
+local government autonomy; (8) lead with competence — his finance and accounting background as a core
+qualification; and (9) stay people-centred, as shown by his balanced handling of the Circular Road.`,
+  },
+  {
+    title: "Where the Platform Is Still Taking Shape",
+    tags: ["gaps", "manifesto", "unpublished", "details", "targets", "pending", "research"],
+    content: `In the interest of honesty, several parts of the platform are still being built out and
+specific detail is not yet public. As at 11 September 2026 these include: a formally released "Omituntun
+3.0" policy document or manifesto; a detailed economic plan beyond the consumption-to-production
+framing; specific healthcare targets beyond the primary-care emphasis; numerical education targets to
+accompany the poverty-map concept; operational detail on the security architecture beyond broad
+commitments; concrete programmes to accompany the women's empowerment commitment; and the specific
+commodities, financing mechanisms and locations for the agricultural value-addition strategy. If a
+visitor asks for these specifics, the assistant should say honestly that the detail will come in the
+forthcoming manifesto and invite them to follow the campaign, rather than inventing figures.`,
+  },
+  {
     title: "How to Get Involved",
-    tags: ["volunteer", "join", "support", "donate", "involved", "campaign", "help", "contact"],
+    tags: ["volunteer", "join", "support", "donate", "involved", "campaign", "help", "contact", "social", "website"],
     content: `Supporters can get involved by volunteering with the campaign, joining local outreach
-efforts, and helping share the candidate's message in their communities. To volunteer or learn more,
-visitors can use the contact details on the website or reach out through the campaign's official social
-media channels.`,
+efforts, and helping share the candidate's message in their communities. The campaign information hub is
+bimbo4gov.com. Official social channels include Facebook (/bimadek1), Instagram (@bimboadekanmbi), X /
+Twitter (@adekanmbi_bimbo) and TikTok (@bimbo4gov). To volunteer or learn more, visitors can use these
+channels or the contact details on the website.`,
   },
 ];
